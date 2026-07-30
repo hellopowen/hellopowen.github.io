@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Public site. Nothing to disallow.
