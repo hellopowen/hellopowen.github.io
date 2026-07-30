@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Public landing. Nothing to disallow.
