@@ -741,3 +741,17 @@ summary h3{ display:inline; font:inherit; letter-spacing:inherit; margin:0; }
   .links a::after{ display:block; margin-top:2pt; }
   @page{ margin:16mm 15mm 18mm; }
 }
+
+/* ---------- v3.1 harvest from the external build (DR-066) ---------------- */
+/* F01: the claim above the lede, at claim size */
+.claim{
+  font-size:var(--t-03); line-height:1.34; color:var(--ink);
+  max-width:50ch; margin:clamp(18px,2.8vw,28px) 0 10px;
+}
+.claim .fig{ font-size:1.15em; }
+/* F02: counters are reserved for the register and the index —
+   the hero tallies read as a run, in the apparatus grey, unnumbered */
+.standing .tally li::before{ content:none; counter-increment:none; }
+/* F09: the index's fastest object — titles up, gloss quiet */
+.index a .t{ font-size:var(--t-03); font-weight:500; }
+.hero .cite{ max-width:52ch; margin:clamp(18px,2.6vw,26px) 0; }
