@@ -21,6 +21,70 @@
   16. Structural rules maintain at least 3:1 contrast against the ground.
 */
 
+@font-face{
+  font-family:"IBM Plex Sans";
+  font-style:normal;
+  font-weight:300;
+  font-display:swap;
+  src:url("../fonts/ibm-plex-sans-latin-300-normal.woff2") format("woff2");
+}
+
+@font-face{
+  font-family:"IBM Plex Sans";
+  font-style:italic;
+  font-weight:300;
+  font-display:swap;
+  src:url("../fonts/ibm-plex-sans-latin-300-italic.woff2") format("woff2");
+}
+
+@font-face{
+  font-family:"IBM Plex Sans";
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+  src:url("../fonts/ibm-plex-sans-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face{
+  font-family:"IBM Plex Sans";
+  font-style:italic;
+  font-weight:400;
+  font-display:swap;
+  src:url("../fonts/ibm-plex-sans-latin-400-italic.woff2") format("woff2");
+}
+
+@font-face{
+  font-family:"IBM Plex Sans";
+  font-style:normal;
+  font-weight:500;
+  font-display:swap;
+  src:url("../fonts/ibm-plex-sans-latin-500-normal.woff2") format("woff2");
+}
+
+@font-face{
+  font-family:"IBM Plex Mono";
+  font-style:normal;
+  font-weight:300;
+  font-display:swap;
+  src:url("../fonts/ibm-plex-mono-latin-300-normal.woff2") format("woff2");
+}
+
+@font-face{
+  font-family:"IBM Plex Mono";
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+  src:url("../fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face{
+  font-family:"IBM Plex Mono";
+  font-style:normal;
+  font-weight:500;
+  font-display:swap;
+  src:url("../fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2");
+}
+
 :root{
   --bg:#1c1c1f;
   --bg-deep:#0b0b0d;
@@ -29,7 +93,7 @@
   --text:#f0f0ee;
   --text-muted:#a1a1a4;
   --text-dim:#8b8b90;
-  --line:#6a6a70;
+  --line:#6d6d68;
 
   --font:"IBM Plex Sans",Arial,Helvetica,sans-serif;
   --font-mono:"IBM Plex Mono","SFMono-Regular",Consolas,"Liberation Mono",monospace;
@@ -48,7 +112,7 @@
   --gutter:clamp(20px,2.8vw,44px);
   --row-pad:var(--s2);
   --columns:repeat(3,minmax(0,1fr));
-  --measure:62ch;
+  --measure:52ch;
   --max:1600px;
 }
 
@@ -212,11 +276,15 @@ a{
   font-size:var(--fs-display);
   font-weight:300;
   line-height:1.06;
-  letter-spacing:-.045em;
+  letter-spacing:-.028em;
   text-wrap:balance;
 }
 
-h3.display{ font-size:var(--fs-lead); letter-spacing:-.025em; }
+h3.display{
+  font-size:var(--fs-lead);
+  font-weight:400;
+  letter-spacing:-.025em;
+}
 
 .lede,.pull,.stand,.note--lead{
   font-size:var(--fs-lead);
@@ -263,6 +331,8 @@ h3.display{ font-size:var(--fs-lead); letter-spacing:-.025em; }
 .hero .thesis-p{ margin:var(--s16) 0 0; }
 
 .hero .pull,.hero .stand{ margin:var(--s8) 0 0; }
+
+.hero .pull + .stand{ margin-top:0; }
 
 .hero .row{ margin-top:var(--s8); }
 
@@ -377,6 +447,8 @@ h3.display{ font-size:var(--fs-lead); letter-spacing:-.025em; }
   list-style:none;
 }
 
+.index ul{ border-top:0; }
+
 .index li{
   position:relative;
   display:grid;
@@ -398,7 +470,8 @@ h3.display{ font-size:var(--fs-lead); letter-spacing:-.025em; }
   transition:opacity .16s ease;
 }
 
-.index li > *{ position:relative; z-index:1; }
+.index li > *{ z-index:1; }
+.index li > :not(a){ position:relative; }
 
 .index li:hover::before,.index li:focus-within::before{ opacity:1; }
 
@@ -407,6 +480,7 @@ h3.display{ font-size:var(--fs-lead); letter-spacing:-.025em; }
   display:grid;
   grid-template-columns:var(--columns);
   column-gap:var(--s4);
+  z-index:2;
   padding-block:var(--s4) var(--s2);
   text-decoration:none;
 }
@@ -474,18 +548,20 @@ h3.display{ font-size:var(--fs-lead); letter-spacing:-.025em; }
 }
 
 .sec-head,.entry{ grid-column:1/-1; }
-.scroll,.dash,.steps,.links,.tally{ grid-column:1/-1; }
+.scroll{ grid-column:1/-1; }
+
+.dash li > div,.steps li,.links a{ max-width:var(--measure); }
 
 .block > .wrap > p,
 .block > .wrap > .uk-note,
 .block > .wrap > .fineprint{ max-width:var(--measure); }
 
-.thesis > .wrap{ grid-column:auto; }
-
 :where(.block > .wrap) > p + p{ margin-top:0; }
 
 .block > .wrap > h3.display{
-  margin:var(--s16) 0 var(--s4);
+  margin:calc(var(--s16) + var(--s4)) 0 var(--s4);
+  padding-top:var(--s2);
+  border-top:1px solid var(--line);
 }
 
 .block > .wrap > h3.display + p,
@@ -576,14 +652,13 @@ hr{
     linear-gradient(var(--line) 1px,transparent 1px),
     linear-gradient(90deg,var(--line) 1px,transparent 1px);
   background-size:var(--s4) var(--s4);
-  transition:background-color .16s ease;
 }
-
-.fig-frame:hover{ background-color:var(--bg-soft); }
 
 .fig[data-ratio="16x9"] .fig-frame{ aspect-ratio:16/9; }
 .fig[data-ratio="4x3"] .fig-frame{ aspect-ratio:4/3; }
 .fig[data-ratio="3x4"] .fig-frame{ width:66.666%; aspect-ratio:3/4; }
+
+.fig--wide{ margin-inline-start:calc(-50% - var(--s4)/2); }
 
 .fig-frame img{
   display:block;
@@ -651,6 +726,13 @@ hr{
   transition:background-color .16s ease,color .16s ease;
 }
 
+.onrec li{
+  font-family:var(--font);
+  line-height:1.55;
+}
+
+.steps{ counter-reset:step; }
+.steps li{ counter-increment:step; }
 .steps li{
   position:relative;
   padding:var(--s2) var(--row-pad) var(--s2) calc(var(--row-pad) + var(--s4));
@@ -660,15 +742,10 @@ hr{
 }
 
 .steps li::before{
+  content:counter(step,decimal-leading-zero);
   position:absolute;
   left:var(--row-pad);
   color:var(--text-dim);
-}
-
-.steps{ counter-reset:step; }
-.steps li{ counter-increment:step; }
-.steps li::before{
-  content:counter(step,decimal-leading-zero);
   font-family:var(--font-mono);
   font-size:var(--fs-fine);
 }
@@ -678,8 +755,9 @@ hr{
   color:var(--text);
 }
 
-.onrec--brief .onrec-h::after{
-  content:" · withheld by design";
+.index li:hover .yr,.dash li:hover .when{ color:var(--text-muted); }
+
+.onrec-note{
   color:var(--text-dim);
   text-transform:none;
 }
@@ -831,6 +909,7 @@ dd{ margin:0; color:var(--text-muted); }
   .ix-ent{ padding-bottom:var(--s4); }
 
   .fig[data-ratio="3x4"] .fig-frame{ width:100%; }
+  .fig--wide{ margin-inline-start:0; }
 
   .facts > div{ grid-template-columns:1fr; gap:var(--s1); }
 
@@ -865,9 +944,9 @@ dd{ margin:0; color:var(--text-muted); }
     --bg-soft:#e7e7e4;
     --bg-hover:#dededb;
     --text:#1c1c1f;
-    --text-muted:#55555a;
-    --text-dim:#68686e;
-    --line:#8a8a86;
+    --text-muted:#57574f;
+    --text-dim:#6a6a61;
+    --line:#84847f;
   }
 }
 
@@ -926,10 +1005,10 @@ dd{ margin:0; color:var(--text-muted); }
   h1,h2,h3,.sec-head{ break-after:avoid; }
   .block{ break-before:page; }
   .index li::before{ display:none; }
-  .index a::after,.mark::after{ content:none; }
+  .index .t::after,.mark::after{ content:none; }
   .fig-frame{ background:none !important; border:.5pt solid #000; }
   .fig-slot{ border:0; background:none !important; }
-  figure.fig:not(:has(img)) .fig-frame{ display:none; }
+  figure.fig:not(:has(img)){ display:none; }
   .onrec{ break-inside:avoid; page-break-inside:avoid; }
   .index li,.onrec li,.dash li,.steps li,tr,.facts > div,.fig{ break-inside:avoid; }
   .stand--role{ border-left:2px solid #000; break-inside:avoid; page-break-inside:avoid; }
