@@ -436,6 +436,7 @@ details details:last-of-type{ border-bottom:0; }
 .site-foot{ border-top:1px solid var(--rule); }
 .site-foot .wrap{ padding-block:clamp(52px,9vw,104px); }
 .site-foot p{ color:var(--ink-2); font-size:var(--t-01); max-width:62ch; }
+.site-foot p.pull{ color:var(--ink); font-size:var(--t-03); max-width:34ch; }
 .site-foot .display{ margin-bottom:clamp(24px,4vw,40px); }
 .fine{ font-size:var(--t-00); color:var(--ink-3); max-width:70ch; }
 
@@ -755,3 +756,8 @@ summary h3{ display:inline; font:inherit; letter-spacing:inherit; margin:0; }
 /* F09: the index's fastest object — titles up, gloss quiet */
 .index a .t{ font-size:var(--t-03); font-weight:500; }
 .hero .cite{ max-width:52ch; margin:clamp(18px,2.6vw,26px) 0; }
+
+/* v3.2 — the record as apparatus: a lead sentence inside the standing register */
+.standing-lead{ margin:0; font-size:var(--t-02); line-height:1.4; color:var(--ink-2); max-width:56ch; }
+.standing-lead .fig{ font-size:1.1em; }
+.standing-lead strong{ color:var(--ink); font-weight:700; }
