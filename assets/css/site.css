@@ -52,9 +52,9 @@
 
 @media (prefers-color-scheme: dark){
   :root{
-    --paper:#161412; --ink:#ece8e1; --ink-2:#c2bab0; --ink-3:#978e82;
-    --accent:#e2704f; --accent-2:#f08a68;
-    --rule:#2d2822; --wash:#2a251e;
+    --paper:#1c1c1f; --ink:#f0f0ee; --ink-2:#a1a1a4; --ink-3:#8b8b90;
+    --accent:#7c88ff; --accent-2:#9aa3ff;
+    --rule:#3a3a38; --wash:#252529;
   }
 }
 
@@ -311,7 +311,7 @@ p.when{ margin-top:14px; }
 .frames .frame{ margin:0; }
 
 @media (prefers-color-scheme: dark){
-  .frame-box{ background:linear-gradient(180deg,#211e1b,#1a1815); }
+  .frame-box{ background:linear-gradient(180deg,#252529,#1c1c1f); }
 }
 
 /* ---------- Lists -------------------------------------------------------- */
