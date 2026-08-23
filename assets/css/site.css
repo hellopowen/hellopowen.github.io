@@ -766,3 +766,22 @@ summary h3{ display:inline; font:inherit; letter-spacing:inherit; margin:0; }
 .standing-lead{ margin:0; font-size:var(--t-02); line-height:1.4; color:var(--ink-2); max-width:56ch; }
 .standing-lead .fig{ font-size:1.1em; }
 .standing-lead strong{ color:var(--ink); font-weight:700; }
+
+
+/* ========================================================================
+   DESIGN-SYSTEM ALIGNMENT — DR-190
+   Brings the typographic voice into line with pogtd and poref, which are the
+   reference implementation of the DR-168 register. APPENDED, never edited in
+   place: every rule below overrides by cascade order, so removing this block
+   restores the previous page exactly. No markup changed, no class orphaned.
+   ---------------------------------------------------------------------- */
+
+/* 1 · DISPLAY WEIGHT — the single biggest mismatch.
+      pogtd/poref set display at 300. These pages were at 700, which read as a
+      different brand rather than a different page. */
+.display{ font-weight:300; letter-spacing:-.028em; line-height:1.06; text-wrap:balance; }
+h2.display{ letter-spacing:-.026em; line-height:1.04; }
+h3.display{ font-weight:400; letter-spacing:-.02em; }
+
+/* 2 · LEDE — poref sets leading tighter and tracking negative at lead size. */
+.lede{ line-height:1.28; letter-spacing:-.025em; }
