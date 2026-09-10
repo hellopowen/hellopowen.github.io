@@ -502,12 +502,5 @@ footer span:nth-child(2){text-align:center}footer a{text-align:right}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.work-card img,.work-hover{transition:none}}
 @media print{.site-header,.down,.work-hover{display:none}.hero,.proposition,.about{min-height:auto}.case{break-before:page}body{background:#fff;color:#111}.proposition,.about,.evidence,.brand-context blockquote{background:#fff;color:#111}.evidence{border:1px solid #555}.evidence li{border-color:#aaa}.record-number strong{color:#111}}
 
-/* Public reference presentation: no documentary placeholders or empty frames. */
-.brand-context--link-only{display:block;min-height:0}
-.brand-context--link-only blockquote{max-width:52rem;margin:0;padding:clamp(24px,4vw,64px)}
-.category-tile{min-height:140px;background:#202023}
-.category-tile figcaption{position:static;padding:32px 12px}
-.public-source-link{margin:clamp(24px,4vw,64px) 0;font-size:clamp(17px,1.3vw,21px);line-height:1.5}
-.public-source-link a{text-underline-offset:5px}
-.vehicle-image{min-height:220px;background:#18181b}
-.lineage-frame{padding-top:24px}
+
+.public-source-link{margin:32px 0;font-size:18px;line-height:1.5}
