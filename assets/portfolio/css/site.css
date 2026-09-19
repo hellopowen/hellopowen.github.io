@@ -200,6 +200,11 @@ p,h1,h2,ul{margin-top:0}
 .brand-context{width:91.666%;margin:0 0 clamp(90px,12vw,180px) auto;display:grid;grid-template-columns:1.6fr 1fr;background:var(--ground);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .brand-context>a{min-width:0}
 .brand-context img{height:100%;min-height:clamp(300px,37vw,590px);object-fit:cover;background:#10282b}
+.brand-context--vision .brand-context-visual{min-width:0;margin:0;display:flex;flex-direction:column;background:#fff}
+.brand-context--vision .brand-context-visual>a{flex:1;display:flex;align-items:center;min-width:0}
+.brand-context--vision img{width:100%;height:auto;min-height:0;object-fit:contain;background:#fff}
+.brand-context-visual figcaption{display:flex;justify-content:space-between;gap:16px;padding:12px 16px;border-top:1px solid #ddd;color:#111;font:11px "IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.03em}
+.brand-context-visual figcaption a{border-bottom:1px solid #777}
 .brand-context blockquote{margin:0;padding:clamp(28px,4.2vw,68px);display:flex;flex-direction:column;justify-content:space-between;background:var(--ground);color:var(--ink)}
 .brand-context blockquote p{margin:0;font-size:clamp(24px,3vw,48px);line-height:1.06;letter-spacing:-.035em}
 .brand-context cite{margin-top:40px;font:11px "IBM Plex Mono",monospace;font-style:normal;text-transform:uppercase;letter-spacing:.045em}
@@ -214,7 +219,7 @@ p,h1,h2,ul{margin-top:0}
 .media--categories>figcaption{grid-template-columns:145px 1fr}
 .media--categories>figcaption a{margin-left:12px;padding-bottom:2px;border-bottom:1px solid rgba(255,255,255,.36);color:var(--ink)}
 .lineage-frame{overflow:hidden;background:#fff;color:#111}
-.media--lineage img{display:block;aspect-ratio:1500/572;object-fit:cover;background:#fff}
+.media--lineage img{display:block;aspect-ratio:16/9;object-fit:cover;background:#fff}
 .media--lineage>figcaption{grid-template-columns:145px 1fr}
 .media--lineage>figcaption i{font-style:italic;color:var(--ink)}
 .media--lineage>figcaption a{margin-left:12px;padding-bottom:2px;border-bottom:1px solid rgba(255,255,255,.36);color:var(--ink)}
@@ -223,6 +228,11 @@ p,h1,h2,ul{margin-top:0}
 .lineage-principles li:first-child{padding-left:0}
 .lineage-principles li:last-child{padding-right:0;border-right:0}
 .lineage-principles small{display:block;margin-top:9px;color:#5f5f5a;font:9px "IBM Plex Mono",monospace;letter-spacing:.04em;text-transform:uppercase}
+.design-timeline{list-style:none;margin:0 0 2.2em;padding:0;border-top:1px solid var(--rule)}
+.design-timeline li{display:grid;grid-template-columns:4.5em 1fr;gap:1em;padding:.75em 0;border-bottom:1px solid var(--rule)}
+.design-timeline li>span:first-child{font:12px "IBM Plex Mono",monospace;letter-spacing:.04em}
+.design-timeline small{font-size:.7em;color:var(--muted)}
+.design-timeline a{border-bottom:1px solid currentColor}
 .source-crop{position:relative;overflow:hidden;background:#fff}
 .source-crop img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#fff}
 .source-crop--kiska-logo::after{content:"";position:absolute;z-index:1;top:0;right:0;width:12%;height:17%;background:#fff;pointer-events:none}
@@ -447,11 +457,12 @@ footer span:nth-child(2){text-align:center}footer a{text-align:right}
   .media-trio--cities .media img,.media-trio--deck .media img{aspect-ratio:16/10;object-fit:cover}
   .brand-context{width:100%;grid-template-columns:1fr}
   .brand-context img{min-height:0;aspect-ratio:16/10}
+  .brand-context--vision img{aspect-ratio:1500/572}
   .brand-context blockquote p{font-size:28px}
   .category-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 12px}
   .media--categories>figcaption{grid-template-columns:70px 1fr}
   .media--categories>figcaption a{display:block;width:max-content;margin:8px 0 0}
-  .media--lineage img{aspect-ratio:4/3;object-position:center;object-fit:cover}
+  .media--lineage img{aspect-ratio:16/9;object-position:center;object-fit:cover}
   .media--lineage>figcaption{grid-template-columns:70px 1fr}
   .media--lineage>figcaption a{display:block;width:max-content;margin:8px 0 0}
   .lineage-principles{grid-template-columns:1fr 1fr}
